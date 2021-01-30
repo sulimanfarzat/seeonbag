@@ -1,1 +1,81 @@
 /* You can add global styles to this file, and also import other style files */
+
+/* Importing Bootstrap SCSS file. */
+@import '~bootstrap/scss/bootstrap';
+
+@import './assets/scss/main.scss';
+
+/* ngx-owl-carousel-o */
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@import '~aos/src/sass/aos.scss';
+
+@import '~@ng-select/ng-select/scss/default.theme.scss';
+
+
+@font-face {
+  font-family: 'Lufga Thin';
+  src: url(assets/fonts/Lufga-Thin.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga ExtraLight';
+  src: url(assets/fonts/Lufga-ExtraLight.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga Light';
+  src: url(assets/fonts/Lufga-Light.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga Medium';
+  src: url(assets/fonts/Lufga-Medium.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga Regular';
+  src: url(assets/fonts/Lufga-Regular.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga Bold';
+  src: url(assets/fonts/Lufga-Bold.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga ExtraBold';
+  src: url(assets/fonts/Lufga-ExtraBold.otf) format("opentype");
+}
+@font-face {
+  font-family: 'Lufga SemiBold';
+  src: url(assets/fonts/Lufga-SemiBold.otf) format("opentype");
+}
+
+
+
+// * {
+//   font-family: 'Lufga', 'Lufga';
+// }
+
+:root {
+	--bag-color: #0BBDB1;
+}
+
+body, html {
+  overflow-x: hidden;
+  scroll-behavior: smooth !important;
+}
+
+::-moz-selection { background: #3B3B3B; color: #0E908E; }
+::selection { background: #3B3B3B; color: #0E908E; }
+
+
+p , i {
+   white-space:pre-line
+}
+
+// :host {
+//   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+//   font-size: 14px;
+//   color: #333;
+//   box-sizing: border-box;
+//   -webkit-font-smoothing: antialiased;
+//   -moz-osx-font-smoothing: grayscale;
+// }
+

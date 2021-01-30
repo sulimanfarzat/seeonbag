@@ -1,0 +1,20 @@
+{
+  "header": {
+    "home": "Home"
+  },
+  "home": {
+    "btn": "pre-Order",
+    "desc": "Welcome to SEEONN180",
+    "label1": "label",
+    "label2": "label",
+    "title": "Welcome to Selecao"
+  },
+  "features": {
+    "tab1": {
+      "title": "einen Freund der meinen Rücken schützt.",
+      "text": "Der Wunsch, einen Freund zu haben der meinen Rücken schützt, ist nicht nur eine oberflächliche Aussage. \nEs ist ein menschliches Bedürfnis das tief in unserer Seele verankert ist. \nEs ist der Wunsch nach mehr Sicherheit in unserem täglichen Leben.\nMit einem „Freund“, fühlen wir uns bei Nacht oder auf einsamen Wegen.",
+      "li1": "gleich sicherer, er schützt unseren „Rücken“.",
+      "li2": "Dein neuer „Freund“ kann unser intelligenter SEEON180° sein."
+    }
+  }
+}
