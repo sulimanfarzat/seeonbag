@@ -3,12 +3,22 @@
     "home": "Home"
   },
 
-  "home": {
-    "btn": "pre-Order",
-    "desc": "Welcome to SEEONN180",
-    "label1": "label",
-    "label2": "label",
-    "title": "Herzlichwelkommen in Selecao"
-  }
+  "home": [
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
+    },
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
+    },
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
+    }
+  ],
 
 }

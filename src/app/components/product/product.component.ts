@@ -25,6 +25,7 @@ export class ProductComponent implements OnInit {
   green: Color = Color.Green;
   yellow: Color = Color.Yellow;
   red: Color = Color.Red;
+  pink: Color = Color.Pink;
 
 
   constructor(private el: ElementRef) { }
@@ -39,7 +40,8 @@ export class ProductComponent implements OnInit {
   }
 
   getColor () {
-    return console.log(this.linkColor);
+    console.log(this.linkColor)
+    return this.linkColor;
   }
 
 

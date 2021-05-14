@@ -3,53 +3,24 @@
   <section id="hero" class="d-flex flex-column justify-content-end align-items-center">
 
     <!-- background video -->
-    <!-- <div class="overlay"></div>
-    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+     <!-- <div class="overlay"></div> -->
+    <!--<video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
       <source src="./assets/img/device.mp4" type="video/mp4">
     </video> -->
 
     <div class="container carousel carousel-fade">
       <owl-carousel-o [options]="homeCarousel" class="owl-testimonials">
 
-      <!-- Slide 1 -->
-      <ng-template carouselSlide>
+      <!-- Slide 1, 2, 3 -->
+      <ng-template *ngFor="let item of 'home' | translate " carouselSlide>
       <div class="active">
         <div class="carousel-container">
-          <h2 class="animate__animated animate__fadeInDown">{{ 'home.title' | translate }}</h2>
-          <p class="animate__animated animate__fadeInUp">Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">PRE-ORDER</a>
+          <h2 class="animate__animated animate__fadeInDown">{{ item.title }}</h2>
+          <p class="animate__animated animate__fadeInUp">{{ item.desc  }}</p>
+          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ item.btn  }}</a>
         </div>
       </div>
       </ng-template>
-      <!-- Slide 2 -->
-      <ng-template carouselSlide>
-      <div class="active">
-        <div class="carousel-container">
-          <h2>The Seeon180 Backpack</h2>
-          <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started scrollto">PRE-ORDER</a>
-        </div>
-      </div>
-      </ng-template>
-      <!-- Slide 3 -->
-      <ng-template carouselSlide>
-      <div class="active">
-        <div class="carousel-container">
-          <h2>A friend watching your Back</h2>
-          <p>Ut velit est quam dolor ad a aliquid qui aliquid. Sequi ea ut et est quaerat sequi nihil ut aliquam. Occaecati alias dolorem mollitia ut. Similique ea voluptatem. Esse doloremque accusamus repellendus deleniti vel. Minus et tempore modi architecto.</p>
-          <a href="#about" class="btn-get-started scrollto">PRE-ORDER</a>
-        </div>
-      </div>
-      </ng-template>
-      <!-- <a class="carousel-control-prev" href="#heroCarousel" role="button" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon bx bx-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-
-      <a class="carousel-control-next" href="#heroCarousel" role="button" data-bs-slide="next">
-        <span class="carousel-control-next-icon bx bx-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a> -->
 
     </owl-carousel-o>
     </div>
@@ -85,41 +56,48 @@
     <section class="features">
       <div class="container" *ngIf="isDisplayed" @container>
 
+        <div class="section-title" data-aos="zoom-out">
+          <h2>{{ 'features.title' | translate}}</h2>
+          <p>{{ 'features.sub-title' | translate}}</p>
+          <span>{{ 'features.desc1' | translate}}</span><br>
+          <span>{{ 'features.desc2' | translate}}</span>
+        </div>
+
         <ul ngbNav #nav="ngbNav" [(activeId)]="active" (navChange)="onNavChange($event)" class="nav nav-tabs row d-flex">
 
-          <li class="nav-item col-3" data-aos="zoom-in" [ngbNavItem]="1">
+          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100"
+          *ngFor="let id of tabs" [ngbNavItem]="id" >
             <a class="nav-link" ngbNavLink>
               <i><fa-icon [icon]="['fas', 'suitcase-rolling']" [classes]="['icon-tabs']"></fa-icon></i>
-              <h4 class="d-none d-lg-block">Modi sit est dela pireda nest</h4>
+              <h4 class="d-none d-lg-block">{{ 'features.cards.' + id + '.title' | translate }}</h4>
             </a>
             <ng-template ngbNavContent>
-              <div class="tab-pane mt-5" data-aos="fade-up" data-aos-delay="300" @enterExitLeft>
+              <div class="tab-pane mt-5" data-aos="fade-up" data-aos-delay="200" @enterExitLeft>
                 <div class="row">
                   <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                    <h3>{{ 'features.tab1.title' | translate }}</h3>
+                    <h3>{{ 'features.cards.' + id + '.desc1' | translate }}</h3>
                     <p class="font-italic">
-                        {{'features.tab1.text' | translate }}
+                      {{ 'features.cards.' + id + '.desc2' | translate }}
                     </p>
                     <ul>
-                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.tab1.li1' | translate }}</li>
-                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.tab1.li2' | translate }}</li>
-                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
+                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
+                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
+                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
                     </ul>
                     <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
+                      {{ 'features.cards.' + id + '.title' | translate }}
                     </p>
                   </div>
                   <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <img src="assets/img/bag/bag-86.png" alt="bag green" class="img-fluid">
+                    <img *ngIf="id!=2" [src]="'assets/img/featuers/featuers-' + id + '.jpg'" alt="bag green" class="img-fluid">
+                    <img *ngIf="id===2" [src]="'assets/img/featuers/featuers-' + id + '.gif'" alt="bag green" class="img-fluid">
                   </div>
                 </div>
               </div>
               </ng-template>
           </li>
 
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" [ngbNavItem]="2">
+          <!-- <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" [ngbNavItem]="2">
             <a class="nav-link" ngbNavLink>
               <i><fa-icon [icon]="['fas', 'directions']" [classes]="['icon-tabs']"></fa-icon></i>
               <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
@@ -217,7 +195,7 @@
                 </div>
               </div>
             </ng-template>
-          </li>
+          </li> -->
 
         </ul>
 
@@ -231,6 +209,11 @@
 
       </div>
     </section><!-- End Features Section -->
+
+    <!-- ======= product Section ======= -->
+    <app-product></app-product>
+    <!-- End product Section -->
+
 
     <!-- ======= Cta Section ======= -->
     <section id="cta" class="cta">
@@ -254,53 +237,16 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Services</h2>
-          <p>What we do offer</p>
+          <h2>{{ 'services.title' | translate}}</h2>
+          <p>{{ 'services.desc' | translate}}</p>
         </div>
 
         <div class="row">
-          <div class="col-lg-4 col-md-6">
-            <div class="icon-box" data-aos="zoom-in-left">
-              <div class="icon"><i style="color: #ff689b;"><fa-icon [icon]="['fas', 'basketball-ball']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Lorem Ipsum</a></h4>
-              <p class="description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5 mt-md-0">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="100">
-              <div class="icon"><i style="color: #e9bf06;"><fa-icon [icon]="['fas', 'book']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Dolor Sitema</a></h4>
-              <p class="description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5 mt-lg-0 ">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="200">
-              <div class="icon"><i style="color: #3fcdc7;"><fa-icon [icon]="['fas', 'file-alt']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Sed ut perspiciatis</a></h4>
-              <p class="description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="300">
-              <div class="icon"><i style="color:#41cf2e;"><fa-icon [icon]="['fas', 'tachometer-alt']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Magni Dolores</a></h4>
-              <p class="description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="400">
-              <div class="icon"><i style="color: #d6ff22;"><fa-icon [icon]="['fas', 'globe-europe']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Nemo Enim</a></h4>
-              <p class="description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-6 mt-5">
-            <div class="icon-box" data-aos="zoom-in-left" data-aos-delay="500">
-              <div class="icon"><i style="color: #4680ff;"><fa-icon [icon]="['far', 'clock']"></fa-icon></i></div>
-              <h4 class="title"><a href="">Eiusmod Tempor</a></h4>
-              <p class="description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
+          <div *ngFor="let item of 'services.cards' | translate" class="col-lg-4 col-md-6 mt-5">
+            <div class="icon-box" data-aos="zoom-in-left" [attr.data-aos-delay]="item.aos">
+              <div class="icon"><i [style.color]="item.color"><fa-icon [icon]="['fas', item.icon]"  [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon></i></div>
+              <h4 class="title"><a href="">{{item.title}}</a></h4>
+              <p class="description">{{ item.desc }}</p>
             </div>
           </div>
         </div>
@@ -309,7 +255,7 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <!-- <section id="portfolio" class="portfolio">
+    <section id="portfolio" class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
@@ -317,109 +263,22 @@
           <p>What we've done</p>
         </div>
 
-        <ul id="portfolio-flters" class="d-flex justify-content-end" data-aos="fade-up">
-          <li data-filter="*" class="filter-active">All</li>
-          <li data-filter=".filter-app">App</li>
-          <li data-filter=".filter-card">Card</li>
-          <li data-filter=".filter-web">Web</li>
-        </ul>
+        <video autoplay="true" muted="true" loop id="myVideo">
+          <source src="../../../assets/img/video-1.mp4" type="video/mp4">
+          Your browser does not support HTML5 video.
+        </video>
 
-        <div class="row portfolio-container" data-aos="fade-up">
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 1</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-1.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-2.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 2</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-3.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-4.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-4.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-5.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 2</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-5.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 2"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-6.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>App 3</h4>
-              <p>App</p>
-              <a href="assets/img/portfolio/portfolio-6.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="App 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-7.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 1</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-7.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 1"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-8.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Card 3</h4>
-              <p>Card</p>
-              <a href="assets/img/portfolio/portfolio-8.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Card 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div class="portfolio-img"><img src="assets/img/portfolio/portfolio-9.jpg" class="img-fluid" alt=""></div>
-            <div class="portfolio-info">
-              <h4>Web 3</h4>
-              <p>Web</p>
-              <a href="assets/img/portfolio/portfolio-9.jpg" data-gall="portfolioGallery" class="venobox preview-link" title="Web 3"><i class="bx bx-plus"></i></a>
-              <a href="portfolio-details.html" class="details-link" title="More Details"><i class="bx bx-link"></i></a>
-            </div>
-          </div>
-
+        <div class="content">
+          <h1>Heading</h1>
+          <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
+          <button id="myBtn" onclick="myFunction()">Pause</button>
         </div>
+        <!-- <div fluid class="row portfolio-container" data-aos="fade-up">
+          <gallery gallerize [items]="images" imageSize="cover" [panSensitivity]="5" style="height: 70vh"></gallery>
+        </div> -->
 
       </div>
-    </section> -->
+    </section>
     <!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
@@ -519,75 +378,123 @@
           <p>Frequently Asked Questions</p>
         </div>
 
-        <ul class="faq-list">
+            <ngb-accordion #acc="ngbAccordion" [destroyOnHide]='false' [closeOthers]="true" type="'success'" activeIds="false" data-aos="fade-up">
 
-          <li data-aos="fade-up" data-aos-delay="100">
-            <a class="collapse" (click)="collapse.toggle()" [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
-              Non consectetur a erat nam at lectus urna duis?
-              <i>
-                <fa-icon *ngIf="isCollapsed" [icon]="['fas','chevron-up']"></fa-icon>
-                <fa-icon *ngIf="!isCollapsed" [icon]="['fas','chevron-down']"></fa-icon>
-              </i>
-            </a>
-            <div #collapse="ngbCollapse" [(ngbCollapse)]="isCollapsed">
-              <p>
-                Feugiat pretium nibh ipsum consequat. Tempus iaculis urna id volutpat lacus laoreet non curabitur gravida. Venenatis lectus magna fringilla urna porttitor rhoncus dolor purus non.
-              </p>
-            </div>
-          </li>
 
-          <li data-aos="fade-up" data-aos-delay="200">
-            <a class="collapse" (click)="collapse2.toggle()" [attr.aria-expanded]="!isCollapsed2" aria-controls="collapseExample">
-              Feugiat scelerisque varius morbi enim nunc faucibus a pellentesque?
-              <i>
-                <fa-icon *ngIf="isCollapsed2" [icon]="['fas','chevron-up']"></fa-icon>
-                <fa-icon *ngIf="!isCollapsed2" [icon]="['fas','chevron-down']"></fa-icon>
-              </i>
-            </a>
-            <div class="collapse" #collapse2="ngbCollapse" [(ngbCollapse)]="isCollapsed2">
-              <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-              </p>
-            </div>
-          </li>
+              <ngb-panel *ngFor="let item of 'faq.cards' | translate; index as i;"  class="collapse" [id]="'panel' + i">
+                <ng-template ngbPanelHeader let-opened="opened">
+                    <a (click)="acc.toggle('panel' + i)">
+                      <i>
+                        <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
+                        <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
+                      </i>
+                      {{i+1}} - {{ item.quast }} - {{ opened ? 'opened' : 'collapsed' }}
+                    </a>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                 {{ item.answr }}
+                </ng-template>
+              </ngb-panel>
 
-          <li data-aos="fade-up" data-aos-delay="300">
-            <a data-bs-toggle="collapse" data-bs-target="#faq3" class="collapsed">Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi? <i class="icofont-simple-up"></i></a>
-            <div id="faq3" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Eleifend mi in nulla posuere sollicitudin aliquam ultrices sagittis orci. Faucibus pulvinar elementum integer enim. Sem nulla pharetra diam sit amet nisl suscipit. Rutrum tellus pellentesque eu tincidunt. Lectus urna duis convallis convallis tellus. Urna molestie at elementum eu facilisis sed odio morbi quis
-              </p>
-            </div>
-          </li>
+              <!-- <ngb-panel id="panel2" >
+                <ng-template ngbPanelHeader let-opened="opened">
+                  <a (click)="acc.toggle('panel2')">
+                    <i>
+                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
+                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
+                    </i>
+                    Second panel - {{ opened ? 'opened' : 'collapsed' }}
+                  </a>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                  wolf moon officia
+                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                  wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                  keffiyeh helvetica,
+                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                  lomo. Leggings
+                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                  them accusamus
+                  labore sustainable VHS.
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="panel3">
+                <ng-template ngbPanelHeader let-opened="opened">
+                  <a (click)="acc.toggle('panel3')">
+                    <i>
+                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
+                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
+                    </i>
+                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
+                  </a>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                  wolf moon officia
+                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                  wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                  keffiyeh helvetica,
+                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                  lomo. Leggings
+                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                  them accusamus
+                  labore sustainable VHS.
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="panel4">
+                <ng-template ngbPanelHeader let-opened="opened">
+                  <a (click)="acc.toggle('panel4')">
+                    <i>
+                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
+                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
+                    </i>
+                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
+                  </a>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                  wolf moon officia
+                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                  wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                  keffiyeh helvetica,
+                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                  lomo. Leggings
+                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                  them accusamus
+                  labore sustainable VHS.
+                </ng-template>
+              </ngb-panel>
+              <ngb-panel id="panel5">
+                <ng-template ngbPanelHeader let-opened="opened">
+                  <a (click)="acc.toggle('panel5')">
+                    <i>
+                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
+                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
+                    </i>
+                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
+                  </a>
+                </ng-template>
+                <ng-template ngbPanelContent>
+                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
+                  wolf moon officia
+                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
+                  wolf moon tempor,
+                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
+                  keffiyeh helvetica,
+                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                  lomo. Leggings
+                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
+                  them accusamus
+                  labore sustainable VHS.
+                </ng-template>
+              </ngb-panel> -->
+            </ngb-accordion>
 
-          <li data-aos="fade-up" data-aos-delay="400">
-            <a data-bs-toggle="collapse" data-bs-target="#faq4" class="collapsed">Ac odio tempor orci dapibus. Aliquam eleifend mi in nulla? <i class="icofont-simple-up"></i></a>
-            <div id="faq4" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Dolor sit amet consectetur adipiscing elit pellentesque habitant morbi. Id interdum velit laoreet id donec ultrices. Fringilla phasellus faucibus scelerisque eleifend donec pretium. Est pellentesque elit ullamcorper dignissim. Mauris ultrices eros in cursus turpis massa tincidunt dui.
-              </p>
-            </div>
-          </li>
 
-          <li data-aos="fade-up" data-aos-delay="500">
-            <a data-bs-toggle="collapse" data-bs-target="#faq5" class="collapsed">Tempus quam pellentesque nec nam aliquam sem et tortor consequat? <i class="icofont-simple-up"></i></a>
-            <div id="faq5" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Molestie a iaculis at erat pellentesque adipiscing commodo. Dignissim suspendisse in est ante in. Nunc vel risus commodo viverra maecenas accumsan. Sit amet nisl suscipit adipiscing bibendum est. Purus gravida quis blandit turpis cursus in
-              </p>
-            </div>
-          </li>
-
-          <li data-aos="fade-up" data-aos-delay="600">
-            <a data-bs-toggle="collapse" data-bs-target="#faq6" class="collapsed">Tortor vitae purus faucibus ornare. Varius vel pharetra vel turpis nunc eget lorem dolor? <i class="icofont-simple-up"></i></a>
-            <div id="faq6" class="collapse" data-bs-parent=".faq-list">
-              <p>
-                Laoreet sit amet cursus sit amet dictum sit amet justo. Mauris vitae ultricies leo integer malesuada nunc vel. Tincidunt eget nullam non nisi est sit amet. Turpis nunc eget lorem dolor sed. Ut venenatis tellus in metus vulputate eu scelerisque. Pellentesque diam volutpat commodo sed egestas egestas fringilla phasellus faucibus. Nibh tellus molestie nunc non blandit massa enim nec.
-              </p>
-            </div>
-          </li>
-
-        </ul>
 
       </div>
     </section><!-- End F.A.Q Section -->

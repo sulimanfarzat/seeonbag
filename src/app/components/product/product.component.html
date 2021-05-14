@@ -1,7 +1,7 @@
 <section id="product">
   <div class="container">
     <div class="row">
-
+<!--
       <div class="col">
         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
           preserveAspectRatio="xMidYMid meet" viewBox="0 0 640 640" width="640" height="640">
@@ -92,8 +92,20 @@
           </g>
         </svg>
       </div>
+ -->
 
-      <div class="col">
+
+
+    <div class="col-md-6">
+      <container-element [ngSwitch]="linkColor">
+        <some-element *ngSwitchCase="blue"><img src="../../../assets/img/product/blue.jpg" class="img-fluid" alt="seeon180 blue"></some-element>
+        <some-element *ngSwitchCase="gray"><img src="../../../assets/img/product/gray.jpg" class="img-fluid" alt="seeon180 gray"></some-element>
+        <some-element *ngSwitchCase="pink"><img src="../../../assets/img/product/pink.jpg" class="img-fluid" alt="seeon180 pink"></some-element>
+        <some-element *ngSwitchCase="red"><img src="../../../assets/img/product/red.jpg" class="img-fluid" alt="seeon180 red"></some-element>
+        <some-element *ngSwitchDefault><img src="../../../assets/img/product/blue.jpg" class="img-fluid" alt="seeon180 blue"></some-element>
+      </container-element>
+    </div>
+    <div class="col-md-6">
         <div>
           <h2 class="bag-color-picker">CHOOSE A COLOR:<br/></h2>
         </div>
@@ -103,7 +115,7 @@
           <button type="button" (click)="setColor(gray)"  class="btn btn-secondary btn-circle btn-sm">Gray</button>
           <button type="button" (click)="setColor(green)"  class="btn btn-success btn-circle btn-sm">Green</button>
           <button type="button" (click)="setColor(yellow)"  class="btn btn-warning btn-circle btn-sm">Yellow</button>
-          <button type="button" (click)="setColor(red)"  class="btn btn-danger btn-circle btn-sm">Red</button>
+          <button type="button" (click)="setColor(pink)" [ngStyle]="{'background-color': pink}" class="btn btn-circle btn-sm">Pink</button>
           <button type="button" (click)="setColor(red)"  class="btn btn-danger btn-circle btn-sm">Red</button>
         </div>
 

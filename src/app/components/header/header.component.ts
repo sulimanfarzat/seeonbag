@@ -44,6 +44,14 @@ export class HeaderComponent implements OnInit {
     }
   }
 
+  switchLang($event: any){
+    this.lang.switchLangService($event);
+    let owlCarouselRTL;
+    owlCarouselRTL = this.lang.selectLang === 'ar' ? true : false;
+    this.lang.setValue(owlCarouselRTL);
+    console.log( this.lang.selectLang)
+  }
+
 
 
 // public goToItems(): void {

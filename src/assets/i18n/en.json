@@ -1,20 +1,93 @@
 {
   "header": {
-    "home": "Home"
+    "home": "Home",
+    "product" : "Product",
+    "about" : "About us",
+    "contact" : "Contact"
   },
-  "home": {
-    "btn": "pre-Order",
-    "desc": "Welcome to SEEONN180",
-    "label1": "label",
-    "label2": "label",
-    "title": "Welcome to Selecao"
-  },
-  "features": {
-    "tab1": {
-      "title": "einen Freund der meinen Rücken schützt.",
-      "text": "Der Wunsch, einen Freund zu haben der meinen Rücken schützt, ist nicht nur eine oberflächliche Aussage. \nEs ist ein menschliches Bedürfnis das tief in unserer Seele verankert ist. \nEs ist der Wunsch nach mehr Sicherheit in unserem täglichen Leben.\nMit einem „Freund“, fühlen wir uns bei Nacht oder auf einsamen Wegen.",
-      "li1": "gleich sicherer, er schützt unseren „Rücken“.",
-      "li2": "Dein neuer „Freund“ kann unser intelligenter SEEON180° sein."
+
+  "home": [
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
+    },
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
+    },
+    {
+      "btn": "pre-Order",
+      "desc": "Welcome to SEEON180°",
+      "title": "Welcome to SEEON180°"
     }
+  ],
+
+  "features" : {
+    "title" : "Features",
+    "sub-title" : "الحقيبة القادمة من المستقبل!",
+    "desc1" : "تتميز حقيبة الظهر الذكية باحتوائها على نظام تنبيه ذكي يعتمد على الذكاء الصناعي لتحليل الصور وتحديد المخاطر وتنبيه المستخدم لما يحدث خلف ظهره ... ",
+    "desc2" : "أنها الصديق الذي يحمي ظهرك ليوفر لك أقصى درجات الحماية من المخاطر التي يمكن أن تحدث معك ولأننا لا نعلم متى الأسواء قد يأتي علينا دائماً تجهز أنفسنا للمواجهة المخاطر. ",
+    "cards" : [
+      {
+        "title" : "التنبيه ضد المخاطر المحيطة ",
+        "desc" : "من خلال هده الخاصية الرائعة تتفرد حقيبتك بالتعرف على المخاطر من خلال الذكاء الصناعي وتنبيهك لتتصرف بشكل سريع وتجاوز الخطر ضمن قدرة على التعرف على المخاطر لا تتجاوز 5 ثواني تعتبر الحقيبة الصديق الذي يراقب ظهرك وينبهك للمخاطر المختلفة. ",
+        "color" : "xxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx"
+      },
+      {
+        "title" : "xxxxx",
+        "desc" : "xxxx",
+        "color" : "cxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx"
+      },
+      {
+        "title" : "xxx",
+        "desc" : "xxxx",
+        "color" : "xxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx"
+      },
+      {
+        "title" : "xxxx",
+        "desc" : "xxxx",
+        "color" : "xxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx"
+      }
+
+    ]
+  },
+
+  "services" : {
+    "title" : "Features",
+    "desc" : "  SEEON180°",
+    "cards" : [
+      {
+        "title" : "xxxxxxxxxxx",
+        "desc" : "xxxxxxxxxxxxxxx ",
+        "color" : "",
+        "icon" : "mask",
+        "aos" : "100"
+      }
+    ]
+  },
+
+  "faq" : {
+    "title" : "Features",
+    "desc" : "من خلال تسع من الوظائف المتفردة تقدم لك حقيبة الظهر الذكية  SEEON180°ذات التكنولوجيا العالية كل ما تحتاجه لحماية نفسك في حياتك اليومية.",
+    "cards" : [
+      {
+        "quast" : "xxxxxxxxxx",
+        "answr" : "xxxxxxxxxxx"
+      },
+      {
+        "quast" : "xxxxxxxxxxx",
+        "answr" : "xxxxxxxxxxxxxxx"
+      }
+    ]
   }
 }
