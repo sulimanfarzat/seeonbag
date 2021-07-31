@@ -17,7 +17,7 @@
         <div class="carousel-container">
           <h2 class="animate__animated animate__fadeInDown">{{ item.title }}</h2>
           <p class="animate__animated animate__fadeInUp">{{ item.desc  }}</p>
-          <a href="#about" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ item.btn  }}</a>
+          <a routerLink="/home" fragment="product" class="btn-get-started animate__animated animate__fadeInUp scrollto">{{ item.btn  }}</a>
         </div>
       </div>
       </ng-template>
@@ -53,7 +53,7 @@
 
 
     <!-- ======= Features Section ======= -->
-    <section class="features">
+    <section id="futures" class="features">
       <div class="container" *ngIf="isDisplayed" @container>
 
         <div class="section-title" data-aos="zoom-out">
@@ -68,7 +68,8 @@
           <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100"
           *ngFor="let id of tabs" [ngbNavItem]="id" >
             <a class="nav-link" ngbNavLink>
-              <i><fa-icon [icon]="['fas', 'suitcase-rolling']" [classes]="['icon-tabs']"></fa-icon></i>
+              <!-- <i><fa-icon [icon]="['fas', 'suitcase-rolling']" [classes]="['icon-tabs']"></fa-icon></i> -->
+              <div class="icon"><i><img src="{{'features.cards.' + id + '.pic' | translate }}" /></i> </div>
               <h4 class="d-none d-lg-block">{{ 'features.cards.' + id + '.title' | translate }}</h4>
             </a>
             <ng-template ngbNavContent>
@@ -81,127 +82,29 @@
                     </p>
                     <ul>
                       <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
-                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
-                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
+                      <!-- <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li>
+                      <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i> {{ 'features.cards.' + id + '.title' | translate }}</li> -->
                     </ul>
-                    <p>
+                    <!-- <p>
                       {{ 'features.cards.' + id + '.title' | translate }}
-                    </p>
+                    </p> -->
                   </div>
                   <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <img *ngIf="id!=2" [src]="'assets/img/featuers/featuers-' + id + '.jpg'" alt="bag green" class="img-fluid">
-                    <img *ngIf="id===2" [src]="'assets/img/featuers/featuers-' + id + '.gif'" alt="bag green" class="img-fluid">
+                    <div class="member">
+                      <!-- *ngIf="id===2" <img *ngIf="id!=2" [src]="'assets/img/featuers/featuers-' + id + '.jpg'" alt="bag green" class="img-fluid"> -->
+                      <img [src]="'assets/img/featuers/featuers-' + id + '.gif'" alt="bag" class="img-fluid" width="100%">
+                    </div>
                   </div>
                 </div>
               </div>
               </ng-template>
           </li>
 
-          <!-- <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="100" [ngbNavItem]="2">
-            <a class="nav-link" ngbNavLink>
-              <i><fa-icon [icon]="['fas', 'directions']" [classes]="['icon-tabs']"></fa-icon></i>
-              <h4 class="d-none d-lg-block">Unde praesenti mara setra le</h4>
-            </a>
-            <ng-template ngbNavContent>
-              <div class="tab-pane mt-5" @enterExitRight>
-                <div class="row">
-                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                    <h3>Neque exercitationem debitis soluta quos debitis quo mollitia officia est</h3>
-                    <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                    <p class="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                      magna aliqua.
-                    </p>
-                    <ul>
-                      <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                      <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <img src="assets/img/bag/bag-41.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="200" [ngbNavItem]="3">
-            <a class="nav-link" ngbNavLink>
-              <i><fa-icon [icon]="['fas', 'user-shield']" [classes]="['icon-tabs']"></fa-icon></i>
-              <h4 class="d-none d-lg-block">Pariatur explica nitro dela</h4>
-            </a>
-            <ng-template ngbNavContent>
-              <div class="tab-pane mt-5" @enterExitRight>
-                <div class="row">
-                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                    <h3>Voluptatibus commodi ut accusamus ea repudiandae ut autem dolor ut assumenda</h3>
-                    <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                    <ul>
-                      <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="ri-check-double-line"></i> Provident mollitia neque rerum asperiores dolores quos qui a. Ipsum neque dolor voluptate nisi sed.</li>
-                    </ul>
-                    <p class="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                      magna aliqua.
-                    </p>
-                  </div>
-                  <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <img src="assets/img/bag/bag-acid.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li>
-
-          <li class="nav-item col-3" data-aos="zoom-in" data-aos-delay="300" [ngbNavItem]="4">
-            <a class="nav-link" ngbNavLink>
-              <i><fa-icon [icon]="['fas', 'camera']" [classes]="['icon-tabs']"></fa-icon></i>
-              <h4 class="d-none d-lg-block">Nostrum qui dile node dolor</h4>
-            </a>
-            <ng-template ngbNavContent>
-              <div class="tab-pane mt-5" @enterExitRight>
-                <div class="row">
-                  <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
-                    <h3>Omnis fugiat ea explicabo sunt dolorum asperiores sequi inventore rerum</h3>
-                    <p>
-                      Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate
-                      velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                      culpa qui officia deserunt mollit anim id est laborum
-                    </p>
-                    <p class="font-italic">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                      magna aliqua.
-                    </p>
-                    <ul>
-                      <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat.</li>
-                      <li><i class="ri-check-double-line"></i> Duis aute irure dolor in reprehenderit in voluptate velit.</li>
-                      <li><i class="ri-check-double-line"></i> Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate trideta storacalaperda mastiro dolore eu fugiat nulla pariatur.</li>
-                    </ul>
-                  </div>
-                  <div class="col-lg-6 order-1 order-lg-2 text-center">
-                    <img src="assets/img/bag/bag-82.png" alt="" class="img-fluid">
-                  </div>
-                </div>
-              </div>
-            </ng-template>
-          </li> -->
-
         </ul>
 
         <div [ngbNavOutlet]="nav" class="mt-2"></div>
 
-        <pre>Active: {{ active }}</pre>
+        <!-- <pre>Active: {{ active }}</pre> -->
 
         <!-- <div class="tab-content" data-aos="fade-up">
 
@@ -221,11 +124,12 @@
 
         <div class="row" data-aos="zoom-out">
           <div class="col-lg-9 text-center text-lg-left">
-            <h3>Call To Action</h3>
-            <p> Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h3>Join us now </h3>
+            <p> Protect your self and geht your Third Eyes... now 30% Early Bird discount on kickstarter.</p>
+            <p>Thank you for supporting our innovation, with your help we take a step together into the future !</p>
           </div>
           <div class="col-lg-3 cta-btn-container text-center">
-            <a class="cta-btn align-middle" href="tel:+49 713 39220420">Call To Action</a>
+            <a class="cta-btn align-middle" target="_blank" href="https://www.kickstarter.com/login?then=https%3A%2F%2Fwww.kickstarter.com%2Fprojects%2Fseeonbackpack%2Fseeon-180-backpack-the-backpack-of-the-future%2Fwatch">Notify me on launch</a>
           </div>
         </div>
 
@@ -238,13 +142,15 @@
 
         <div class="section-title" data-aos="zoom-out">
           <h2>{{ 'services.title' | translate}}</h2>
-          <p>{{ 'services.desc' | translate}}</p>
+          <p>{{ 'services.desc1' | translate}}</p>
+          <span>{{ 'services.desc2' | translate}}</span>
         </div>
 
         <div class="row">
           <div *ngFor="let item of 'services.cards' | translate" class="col-lg-4 col-md-6 mt-5">
             <div class="icon-box" data-aos="zoom-in-left" [attr.data-aos-delay]="item.aos">
-              <div class="icon"><i [style.color]="item.color"><fa-icon [icon]="['fas', item.icon]"  [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon></i></div>
+              <!-- <div class="icon"><i [style.color]="item.color"><fa-icon [icon]="['fas', item.icon]"  [spin]="isSyncAnimated" (click)="isSyncAnimated=!isSyncAnimated"></fa-icon></i></div> -->
+              <div class="icon"><i [style.color]="item.color"><img [src]="['./assets/img/icons/' + item.pic + '.png']" /></i></div>
               <h4 class="title"><a href="">{{item.title}}</a></h4>
               <p class="description">{{ item.desc }}</p>
             </div>
@@ -255,111 +161,125 @@
     </section><!-- End Services Section -->
 
     <!-- ======= Portfolio Section ======= -->
-    <section id="portfolio" class="portfolio">
+    <section class="portfolio">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
-          <h2>Portfolio</h2>
+          <h2>Media</h2>
           <p>What we've done</p>
         </div>
 
-        <video autoplay="true" muted="true" loop id="myVideo">
-          <source src="../../../assets/img/video-1.mp4" type="video/mp4">
-          Your browser does not support HTML5 video.
-        </video>
+        <div class="row">
+        <!-- <video (playing)="onPlayingVideo($event)"  autoplay="true" muted="true" loop id="myVideo" >
+            <source src="../../../assets/img/video-1.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video> -->
 
-        <div class="content">
-          <h1>Heading</h1>
-          <p>Lorem ipsum dolor sit amet, an his etiam torquatos. Tollit soleat phaedrum te duo, eum cu recteque expetendis neglegentur. Cu mentitum maiestatis persequeris pro, pri ponderum tractatos ei. Id qui nemore latine molestiae, ad mutat oblique delicatissimi pro.</p>
-          <button id="myBtn" onclick="myFunction()">Pause</button>
+          <div class="col-lg-8 col-sm-12 portfolio-item">
+            <div class="flex justify-center items-center">
+            <div class="vid isAngled">
+               <div class="vid-wrap">
+                <video (playing)="onPlayingVideo($event)" controls width="400">
+                  <source src="assets/img/video-1.mp4" type="video/mp4">
+                </video>
+               </div>
+            </div>
+          </div>
+          </div>
+          <div class="col-lg-4 col-sm-12 portfolio-item">
+              <!-- <p data-aos="zoom-in"></p> -->
+               <ul>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A surveillance camera detects people</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A motion detection sensor</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A GPS tracking device</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A control panel</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A wireless network router</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>An alarm system</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>LED lights</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A Rechargeable battery</li>
+                <li><i><fa-icon [icon]="['fas', 'check-double']"></fa-icon></i>A USB-C and USB-A charging porta</li>
+              </ul>
+          </div>
+          <div class="flex justify-center items-center">
+
+         </div>
+
         </div>
-        <!-- <div fluid class="row portfolio-container" data-aos="fade-up">
-          <gallery gallerize [items]="images" imageSize="cover" [panSensitivity]="5" style="height: 70vh"></gallery>
-        </div> -->
-
       </div>
     </section>
+
+
     <!-- End Portfolio Section -->
 
     <!-- ======= Testimonials Section ======= -->
     <!-- End Testimonials Section -->
 
     <!-- ======= Pricing Section ======= -->
-    <section id="pricing" class="pricing">
+    <section id="pricing" class="pricing" style="padding-top: 10 !important;">
       <div class="container">
 
         <div class="section-title" data-aos="zoom-out">
           <h2>Pricing</h2>
-          <p>Our Competing Prices</p>
+          <p>The Rewards</p>
         </div>
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6">
-            <div class="box" data-aos="zoom-in">
-              <h3>Basic</h3>
-              <h4><sup>$</sup>200<span> / Back Bag</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li class="na">Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-md-0">
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-md-0">
             <div class="box featured" data-aos="zoom-in" data-aos-delay="100">
-              <h3>Business</h3>
-              <h4><sup>$</sup>290<span> / Back Bag</span></h4>
+              <h3>Early Bird</h3>
+              <h4><sup>$</sup>419</h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li class="na">Massa ultricies mi</li>
+                <li class="text-warning" style="font-weight: 800;">Save <sup>$</sup>180</li>
+                <li>1x Backpack Shell</li>
+                <li>1x Control Planel</li>
+                <li>1x Solar Panel</li>
+                <li>1x Power Bank</li>
+                <li class="na text-danger">MSRP $599</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="https://www.kickstarter.com/projects/seeonbackpack/seeon-180-backpack-the-backpack-of-the-future" target="_blank" class="btn-buy">Pro Order</a>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
-            <div class="box" data-aos="zoom-in" data-aos-delay="200">
-              <h3>Pro</h3>
-              <h4><sup>$</sup>390<span> / Back Bag</span></h4>
-              <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
-              </ul>
-              <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
-              </div>
-            </div>
-          </div>
 
-          <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
             <div class="box" data-aos="zoom-in" data-aos-delay="300">
               <span class="advanced">Advanced</span>
-              <h3>Ultimate</h3>
-              <h4><sup>$</sup>490<span> / Back Bag</span></h4>
+              <h3>KS Price</h3>
+              <h4><sup>$</sup>490</h4>
               <ul>
-                <li>Aida dere</li>
-                <li>Nec feugiat nisl</li>
-                <li>Nulla at volutpat dola</li>
-                <li>Pharetra massa</li>
-                <li>Massa ultricies mi</li>
+                <li class="text-warning" style="font-weight: 800;">Save <sup>$</sup>100</li>
+                <li>1x Backpack Shell</li>
+                <li>1x Control Planel</li>
+                <li>1x Solar Panel</li>
+                <li>1x Power Bank</li>
+                <li class="na text-danger">MSRP $599</li>
               </ul>
               <div class="btn-wrap">
-                <a href="#" class="btn-buy">Buy Now</a>
+                <a href="https://www.kickstarter.com/projects/seeonbackpack/seeon-180-backpack-the-backpack-of-the-future" target="_blank" class="btn-buy">Pro Order</a>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="col-lg-4 col-md-6 mt-4 mt-lg-0">
+            <div class="box" data-aos="zoom-in">
+              <h3>Retail</h3>
+              <h4><sup>$</sup>559</h4>
+              <ul>
+                <li class="text-warning" style="font-weight: 800;">Save <sup>$</sup>40</li>
+                <li>1x Backpack Shell</li>
+                <li>1x Control Planel</li>
+                <li>1x Solar Panel</li>
+                <li>1x Power Bank</li>
+                <li class="na text-danger">MSRP $599</li>
+              </ul>
+              <div class="btn-wrap">
+                <a href="https://www.kickstarter.com/projects/seeonbackpack/seeon-180-backpack-the-backpack-of-the-future" target="_blank" class="btn-buy">Pro Order</a>
               </div>
             </div>
           </div>
@@ -388,7 +308,8 @@
                         <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
                         <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
                       </i>
-                      {{i+1}} - {{ item.quast }} - {{ opened ? 'opened' : 'collapsed' }}
+                      {{i+1}} - {{ item.quast }}
+                      <!-- - {{ opened ? 'opened' : 'collapsed' }} -->
                     </a>
                 </ng-template>
                 <ng-template ngbPanelContent>
@@ -396,102 +317,6 @@
                 </ng-template>
               </ngb-panel>
 
-              <!-- <ngb-panel id="panel2" >
-                <ng-template ngbPanelHeader let-opened="opened">
-                  <a (click)="acc.toggle('panel2')">
-                    <i>
-                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
-                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
-                    </i>
-                    Second panel - {{ opened ? 'opened' : 'collapsed' }}
-                  </a>
-                </ng-template>
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia
-                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                  wolf moon tempor,
-                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                  keffiyeh helvetica,
-                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                  lomo. Leggings
-                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-                  them accusamus
-                  labore sustainable VHS.
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel id="panel3">
-                <ng-template ngbPanelHeader let-opened="opened">
-                  <a (click)="acc.toggle('panel3')">
-                    <i>
-                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
-                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
-                    </i>
-                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
-                  </a>
-                </ng-template>
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia
-                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                  wolf moon tempor,
-                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                  keffiyeh helvetica,
-                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                  lomo. Leggings
-                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-                  them accusamus
-                  labore sustainable VHS.
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel id="panel4">
-                <ng-template ngbPanelHeader let-opened="opened">
-                  <a (click)="acc.toggle('panel4')">
-                    <i>
-                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
-                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
-                    </i>
-                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
-                  </a>
-                </ng-template>
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia
-                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                  wolf moon tempor,
-                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                  keffiyeh helvetica,
-                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                  lomo. Leggings
-                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-                  them accusamus
-                  labore sustainable VHS.
-                </ng-template>
-              </ngb-panel>
-              <ngb-panel id="panel5">
-                <ng-template ngbPanelHeader let-opened="opened">
-                  <a (click)="acc.toggle('panel5')">
-                    <i>
-                      <fa-icon *ngIf="opened" [icon]="['fas','chevron-up']"></fa-icon>
-                      <fa-icon *ngIf="!opened" [icon]="['fas','chevron-down']"></fa-icon>
-                    </i>
-                    Third panel - {{ opened ? 'opened' : 'collapsed' }}
-                  </a>
-                </ng-template>
-                <ng-template ngbPanelContent>
-                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3
-                  wolf moon officia
-                  aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3
-                  wolf moon tempor,
-                  sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim
-                  keffiyeh helvetica,
-                  craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
-                  lomo. Leggings
-                  occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of
-                  them accusamus
-                  labore sustainable VHS.
-                </ng-template>
-              </ngb-panel> -->
             </ngb-accordion>
 
 
@@ -510,74 +335,56 @@
 
         <div class="row">
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up">
               <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/bissan.png" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'twitter']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'facebook-f']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'instagram']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Walter White</h4>
-                <span>Chief Executive Officer</span>
+                <h4>Bisan Hussain</h4>
+                <span>Design Director co-founder of Saros Lab GmbH</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="100">
               <div class="member-img">
-                <img src="assets/img/team/team-2.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/dr.png" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'twitter']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'facebook-f']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'instagram']"></fa-icon></i></a>
+                  <a href=""><i><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>Sarah Jhonson</h4>
-                <span>Product Manager</span>
+                <h4>Dr. Hans-Peter Hübner</h4>
+                <span>former Robert Bosch Engineering Executive, Advisor of Saros GmbH and Mentor of the SEEON180° project</span>
               </div>
             </div>
           </div>
 
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
+          <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
             <div class="member" data-aos="fade-up" data-aos-delay="200">
               <div class="member-img">
-                <img src="assets/img/team/team-3.jpg" class="img-fluid" alt="">
+                <img src="assets/img/team/nassim.png" class="img-fluid" alt="">
                 <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
+                  <a href="#"><i><fa-icon [icon]="['fab', 'twitter']"></fa-icon></i></a>
+                  <a href="#"><i><fa-icon [icon]="['fab', 'facebook-f']"></fa-icon></i></a>
+                  <a href="#"><i><fa-icon [icon]="['fab', 'instagram']"></fa-icon></i></a>
+                  <a href="#"><i><fa-icon [icon]="['fab', 'linkedin']"></fa-icon></i></a>
                 </div>
               </div>
               <div class="member-info">
-                <h4>William Anderson</h4>
-                <span>CTO</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up" data-aos-delay="300">
-              <div class="member-img">
-                <img src="assets/img/team/team-4.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href=""><i class="icofont-twitter"></i></a>
-                  <a href=""><i class="icofont-facebook"></i></a>
-                  <a href=""><i class="icofont-instagram"></i></a>
-                  <a href=""><i class="icofont-linkedin"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h4>Amanda Jepson</h4>
-                <span>Accountant</span>
+                <h4>Nassim Al Khalil</h4>
+                <span>CEO and co-founder of Saros Lab GmbH, inventor of the Seeon180 smart backpack and chief programmer of the Bag project</span>
               </div>
             </div>
           </div>

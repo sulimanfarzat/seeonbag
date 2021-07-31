@@ -3,91 +3,293 @@
     "home": "Home",
     "product" : "Product",
     "about" : "About us",
-    "contact" : "Contact"
+    "contact" : "Contact",
+    "futures" : "Futures",
+    "functions": "Functions",
+    "faq" : "FAQ"
   },
 
   "home": [
     {
-      "btn": "pre-Order",
-      "desc": "Welcome to SEEON180°",
-      "title": "Welcome to SEEON180°"
+      "btn": "Learn More",
+      "desc": "SEEON180° is not a traditional backpack but rather the most innovative bag in the world",
+      "title": "A friend got your Back"
     },
     {
-      "btn": "pre-Order",
-      "desc": "Welcome to SEEON180°",
-      "title": "Welcome to SEEON180°"
+      "btn": "Learn More",
+      "desc": "With its ability to recognize images and identify risks, it can be your third eye",
+      "title": "Eyes in the back of your head"
     },
     {
-      "btn": "pre-Order",
-      "desc": "Welcome to SEEON180°",
-      "title": "Welcome to SEEON180°"
+      "btn": "Learn More",
+      "desc": "Luxurious Italian design and German technology in more elegant and fashionable appearance",
+      "title": "Technology with modern designs"
     }
   ],
 
   "features" : {
     "title" : "Features",
-    "sub-title" : "الحقيبة القادمة من المستقبل!",
-    "desc1" : "تتميز حقيبة الظهر الذكية باحتوائها على نظام تنبيه ذكي يعتمد على الذكاء الصناعي لتحليل الصور وتحديد المخاطر وتنبيه المستخدم لما يحدث خلف ظهره ... ",
-    "desc2" : "أنها الصديق الذي يحمي ظهرك ليوفر لك أقصى درجات الحماية من المخاطر التي يمكن أن تحدث معك ولأننا لا نعلم متى الأسواء قد يأتي علينا دائماً تجهز أنفسنا للمواجهة المخاطر. ",
+    "sub-title" : "The bag from the future!",
+    "desc1" : "The smart backpack features a smart alert system based on artificial intelligence to analyze images, identify risks and alert the user to what is happening behind his back.",
+    "desc2" : "It is the friend that protects your back to provide you with maximum protection from the dangers that can occur to you and because we do not know when the worst may come upon us we always prepare ourselves to face the risks.",
     "cards" : [
       {
-        "title" : "التنبيه ضد المخاطر المحيطة ",
-        "desc" : "من خلال هده الخاصية الرائعة تتفرد حقيبتك بالتعرف على المخاطر من خلال الذكاء الصناعي وتنبيهك لتتصرف بشكل سريع وتجاوز الخطر ضمن قدرة على التعرف على المخاطر لا تتجاوز 5 ثواني تعتبر الحقيبة الصديق الذي يراقب ظهرك وينبهك للمخاطر المختلفة. ",
-        "color" : "xxxx",
+        "title" : "Danger Alerts",
+        "desc1" : "Warns Against Hazards",
+        "desc2" : "A surveillance camera detects people, cars, or any threatening object behind you to alert you, so you can take immediate action and get yourself out of a dangerous situation.",
         "icon" : "check-double",
-        "aos" : "xxxx"
+        "aos" : "xxxx",
+        "pic": "assets/img/icons/danger.png"
       },
       {
-        "title" : "xxxxx",
-        "desc" : "xxxx",
+        "title" : "Theft Alerts",
+        "desc1" : "Anti-theft Function",
+        "desc2" : "An alarm system that consists of electronic vibrations installed that goes off and protects the owner if it senses the possibility of nearby danger.",
         "color" : "cxxx",
         "icon" : "check-double",
-        "aos" : "xxxx"
+        "aos" : "xxxx",
+        "pic": "assets/img/icons/theft.png"
       },
       {
-        "title" : "xxx",
+        "title" : "Color Options",
+        "desc1" : "Interior lighting",
+        "desc2" : "To make sure you’re always bright, SeeOn180° carries LED lights that are installed around the bag with the ability to sense dark areas and light up.",
+        "color" : "xxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx",
+        "pic": "assets/img/icons/light.png"
+      },
+      {
+        "title" : "Live Tracking",
+        "desc1" : "For ease of movement",
+        "desc2" : "A GPS tracking device that purposes to send the user’s location to the contact list specified by him or her.",
+        "color" : "xxxx",
+        "icon" : "check-double",
+        "aos" : "xxxx",
+        "pic": "assets/img/icons/location.png"
+      },
+      {
+        "title" : "Comfortable and ModernDdesign ",
         "desc" : "xxxx",
         "color" : "xxxx",
         "icon" : "check-double",
-        "aos" : "xxxx"
-      },
-      {
-        "title" : "xxxx",
-        "desc" : "xxxx",
-        "color" : "xxxx",
-        "icon" : "check-double",
-        "aos" : "xxxx"
+        "aos" : "xxxx",
+        "pic": "assets/img/icons/location.png"
       }
 
     ]
   },
 
   "services" : {
-    "title" : "Features",
-    "desc" : "  SEEON180°",
+    "title" : "Functions",
+    "desc1" : "The high-tech Backpack",
+    "desc2" : "This high-tech yet aesthetically pleasing bag is all you need to sustain the safest possible way of living your day-to-day life.",
     "cards" : [
       {
-        "title" : "xxxxxxxxxxx",
-        "desc" : "xxxxxxxxxxxxxxx ",
+        "title" : "Anti-theft function",
+        "desc" : "Your bag stays safe and you can track it if it gets stolen ",
         "color" : "",
         "icon" : "mask",
-        "aos" : "100"
+        "aos" : "100",
+        "pic": "theft"
+      },
+      {
+        "title" : "Party Mode",
+        "desc" : "External lighting provides you with a modern look and multiple options and alerts cars and moving objects to your presence",
+        "color" : "#F9FA0F",
+        "icon" : "lightbulb",
+        "aos" : "150",
+        "pic": "music"
+      },
+      {
+        "title" : "Live Tracking",
+        "desc" : "For ease of movement and to let you know the location of your bag using GPS",
+        "color" : "#ff689b",
+        "icon" : "search-location",
+        "aos" : "200",
+        "pic": "location"
+      },
+      {
+        "title" : "Warns Against Hazards",
+        "desc" : "Through this wonderful feature, your bag is unique in identifying risks and alerting you to act quickly",
+        "color" : "#F2BE22",
+        "icon" : "user-shield",
+        "aos" : "250",
+        "pic": "danger"
+      },
+      {
+        "title" : "Comfortable ",
+        "desc" : "Provides you comfort while wearing and makes your day easier and more active",
+        "color" : "#3fcdc7",
+        "icon" : "drafting-compass",
+        "aos" : "300",
+        "pic": "design"
+      },
+      {
+        "title" : "Easy charging",
+        "desc" : " There is no need to remove the power bank from the bag, you can easily charge it through a special USB port to charge it",
+        "color" : "#41cf2e",
+        "icon" : "battery-three-quarters",
+        "aos" : "350",
+        "pic": "charge"
+      },
+      {
+        "title" : "External Lights ",
+        "desc" : "Interior lighting saves time searching for things in your bag",
+        "color" : "#d6ff22",
+        "icon" : "magic",
+        "aos" : "400",
+        "pic": "light"
+      },
+      {
+        "title" : "Smart Location Alerts",
+        "desc" : "The smart bag will notify you if you get far enough from it",
+        "color" : "#4680ff",
+        "icon" : "eye",
+        "aos" : "450",
+        "pic": "forget"
+      },
+      {
+        "title" : "Backup Battery",
+        "desc" : " Whether you are an Android or iPhone smart phone user, the smart bag provides you with fast USB outputs",
+        "color" : "#EE69FA",
+        "icon" : "charging-station",
+        "aos" : "500",
+        "pic": "cabel"
       }
     ]
   },
 
   "faq" : {
     "title" : "Features",
-    "desc" : "من خلال تسع من الوظائف المتفردة تقدم لك حقيبة الظهر الذكية  SEEON180°ذات التكنولوجيا العالية كل ما تحتاجه لحماية نفسك في حياتك اليومية.",
     "cards" : [
       {
-        "quast" : "xxxxxxxxxx",
-        "answr" : "xxxxxxxxxxx"
-      },
-      {
-        "quast" : "xxxxxxxxxxx",
-        "answr" : "xxxxxxxxxxxxxxx"
-      }
+        "quast" : "How does the SEEON 180 ° backpack recognize threats?",
+        "answr" : "The bag is equipped with a built-in smart device capable of recognizing images through a set of sensors in addition to the camera."
+        },
+        {
+        "quast" : "How does the SEEON 180° backpack connect to a smartphone?",
+        "answr" : "The bag can be connected to smartphones via Bluetooth within a limited range, that allows to control all the functions of the bag easily through SEEON 180 APP."
+        },
+        {
+        "quast" : "How does the SEEON 180 ° backpack protect me?",
+        "answr" : "The bag is built to detect 265 danger which can happen behind your back, accordingly, the Alarm will be loudly triggered."
+        },
+        {
+        "quast" : "What to do if the alarm goes off?",
+        "answr" : "It's your decision, but we recommend leaving the danger zone and ask for help ASAP."
+        },
+        {
+        "quast" : "The alert's levels and how does it work?",
+        "answr" : "starting with a vibration alarm, to the 140-dB sound alarm, to the last level The Red Alert, its a light alarm and two tones."
+        },
+        {
+        "quast" : "Why do we think the SEEON180° alarm system will reduce the dangers around you?",
+        "answr" : "Surely, we don't want to imagine the worst and hope you always stay safe, but in case you face any unexpectable situation, you have at least a friend that watch your back to warn you."
+        },
+        {
+        "quast" : "How to activate the alert feature in the bag?",
+        "answr" : "The alert feature is activated in two ways: the first method is to place the bag on your smartphone, and the second method is to press the button twice on the right strap of the bag."
+        },
+        {
+        "quast" : "When will the bag send a SOS to your contacts?",
+        "answr" : "You can set your own emergency contacts and set the time of the SOS call via the smartphone app as you wish."
+        },
+        {
+        "quast" : "Will the alarm be triggered if the danger came from the front?",
+        "answr" : "It won't be triggered automatically but You can activate the alarm by pressing the button on the right belt of the bag 3 times in a row."
+        },
+        {
+        "quast" : "How do I turn off the alarm when the danger ends?",
+        "answr" : "You can deactivate the alarm only through using the App"
+        },
+        {
+        "quast" : "Will the bag's alarm system beep all the time?",
+        "answr" : "Not really, the bag only recognizes pre-determined risks and won't warn you in other circumstances"
+        },
+        {
+        "quast" : "Does the alert feature work in crowded areas?",
+        "answr" : "Yes, all bag features work in all places, but it's a good idea to turn off the alert feature when you are in crowded and safe places, to save energy."
+        },
+        {
+        "quast" : "How long does it take to charge the built-in battery, and can I remove or replace it?",
+        "answr" : "It takes 7 hours to charge the battery, you can remove and replace it"
+        },
+        {
+        "quast" : "How much energy do solar panels provide?",
+        "answr" : "Output power 5W"
+        },
+        {
+        "quast" : "What materials are used in the manufacture of the bag?",
+        "answr" : "The bag is made of premium genuine leather and has metal and plastic parts."
+        },
+        {
+        "quast" : "Is SEEON180° water resistant?",
+        "answr" : "Yes, the bag is water-resistant "
+        },
+        {
+        "quast" : "Where will the shipment take place, and do I have to pay customs duties?",
+        "answr" : "We will ship from our warehouse in Germany, and domestic shipping for our US costumers."
+        },
+        {
+        "quast" : "What about the privacy policy for the in-bag camera?",
+        "answr" : "The camera does not save any pictures and the main purpose of the camera is to recognize the dangers to alarm you."
+        }
+
     ]
+  },
+
+  "about" : {
+    "title" : "about us",
+    "sub-title" : "About us",
+    "desc" : "What we do",
+    "desc1" : "Core values",
+    "desc2" : "Innovation: We will devote ourselves to new and creative means of improving the quality of the products we offer.",
+    "desc3" : "Honesty: A honest portrayal of our products will be a key cornerstone of our business, and we will ensure we do not misrepresent or embellish our words beyond the established fact.",
+    "desc4" : "Trust: We believe in ourselves to be able to deliver on our word, and we will ensure our customers are able to place their trust in us",
+    "desc5": "Creativity: We will encourage ourselves to take risks and come up with different ideas for optimizing the efficiency and performance of our backpacks",
+
+    "desc1-2" : "Our Mission",
+    "text" : "Our mission is to produce backpacks with high-tech capabilities, incorporating security functions which would be of great benefit in the day-to-day life of our customers Our vision is to secure a widespread adoption of our backpacks and to possess a reputation for excellent product quality and affordability",
+    "desc2-2" : "At SEEON 180°, our mission is to produce backpacks with high-tech capabilities, incorporating security functions which would be of great benefit in the day-to-day life of our customers.",
+    "desc3-2" : "Our founders are a team of Syrian refugees whose initial efforts in life consisted of making it to a safe environment. Now, we are pulling together our extensive experience and are launching these backpacks to bring to life several concepts that have long been in the minds of our founders.",
+    "desc4-2" : "We are located at Egerten 3، 74388 Talheim, Germany, we have a strong commitment to merging a commonly used product, the backpack, with several useful technical capabilities relating to different aspects of human living. The purpose of our business and products is the safety of our customers, and the reliable performance of our backpacks. In our backpacks, you have a friend watching your back."
+  },
+
+  "testimonials": {
+    "title" : "testimonials",
+    "cards" : [
+        {
+          "name" : "Suliamn Farzat",
+          "title" : "Ceo & Founder FARZAT it solutions",
+          "text" : "Sarros Lab is a unique company, they really change the world with their ideas",
+          "pic" : "assets/img/testimonials/testimonials-1.jpg"
+        },
+        {
+          "name" : "Omar Elsbtawy",
+          "title" : "Influencer",
+          "text" : "I hope this bag is available to all people it is really cool technology",
+          "pic" : "assets/img/testimonials/testimonials-2.png"
+        },
+        {
+          "name" : "Alexander Mohaupt",
+          "title" : "CEO Haus of Company",
+          "text" : "We are proud to have Sarus Lab among us who are doing a great job developing personal protective equipment",
+          "pic" : "assets/img/testimonials/testimonials-3.png"
+        },
+        {
+          "name" : "Wael Hamdy",
+          "title" : "Swiss Enterpreneur",
+          "text" : "Not only a normal person who made a new invention for sales or new marketing only, but much more. It’s a story, The final product is an honour for every Arab, an example of non-render, and to tell everyone ( impossible is nothing ).",
+          "pic" : "assets/img/testimonials/testimonials-4.jpg"
+        },
+        {
+          "name" : "Regan Nagel",
+          "title" : "Killerstartups",
+          "text" : "Luckily, the SEEON180° is the perfect travel partner that stays on the alert for dangerous scenarios and always has your back.",
+          "pic" : "assets/img/testimonials/testimonials-5.jpg"
+        }
+      ]
   }
+
 }

@@ -1,83 +1,58 @@
 
-// #hero video {
-//   position: absolute;
-//   top: 50%;
-//   left: 50%;
-//   min-width: 100%;
-//   min-height: 100%;
-//   width: auto;
-//   height: auto;
-//   z-index: 0;
-//   -ms-transform: translateX(-50%) translateY(-50%);
-//   -moz-transform: translateX(-50%) translateY(-50%);
-//   -webkit-transform: translateX(-50%) translateY(-50%);
-//   transform: translateX(-50%) translateY(-50%);
-// }
-
-// #hero .container {
-//   position: relative;
-//   z-index: 2;
-// }
-
-// #hero .overlay {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   height: 70vh;
-//   width: 100%;
-//   background-color: black;
-//   opacity: 0.5;
-//   z-index: 1;
-// }
-
-// @media (pointer: coarse) and (hover: none) {
-//   #hero {
-//     background: url('https://source.unsplash.com/XT5OInaElMw/1600x900') black no-repeat center center scroll;
-//   }
-//   #hero video {
-//     display: none;
-//   }
-// }
 
 /*viseo*/
-* {
-  box-sizing: border-box;
+
+.vid {
+  transition: .5s all;
+  border-radius: 1rem;
+  overflow: hidden;
+  &-wrap {
+     border-radius: 1rem;
+     overflow: hidden;
+     margin-bottom: -8px;
+  }
+
 }
 
-body {
-  margin: 0;
-  font-family: Arial;
-  font-size: 17px;
+.isAngled {
+  transform: perspective(1000px) rotateY(25deg);
+  perspective: 10px;
+  transform-style: preserve-3d;
+  box-shadow: -20px 30px 85px rgba(16,29,37,.5);
+  transition: .5s all;
+  border-radius: 1rem;
+  overflow: hidden;
+  // height: 350px;
+  &:hover {
+     transform: perspective(0px) rotateY(0deg);
+     box-shadow: 0 5px 20px rgba(14,144,142,.75);
+  }
+
 }
 
-#myVideo {
-  position: relative;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-}
-
-.content {
-  position: relative;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.5);
-  color: #f1f1f1;
+video {
   width: 100%;
-  padding: 20px;
+  height: auto;
 }
 
-#myBtn {
-  width: 200px;
-  font-size: 18px;
-  padding: 10px;
-  border: none;
-  background: #000;
-  color: #fff;
-  cursor: pointer;
+.portfolio-item {
+  padding-top: 40px;
+  padding-bottom: 110px;
 }
 
-#myBtn:hover {
-  background: #ddd;
-  color: black;
+@media screen and (max-width: 768px) {
+  .portfolio .portfolio-item{
+    padding-bottom: 0px;
+  }
+}
+
+.portfolio .portfolio-item ul li {
+  list-style: none;
+  padding-bottom: 10px;
+}
+
+.portfolio .portfolio-item ul i {
+  font-size: 20px;
+  padding-right: 4px;
+  color: #0E908E;
 }

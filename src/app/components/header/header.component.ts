@@ -16,7 +16,7 @@ export class HeaderComponent implements OnInit {
   @ViewChild('headerMenu') public menuElement!: ElementRef<HTMLInputElement>;
   elementPosition: any;
 
-  fragment: string = '';
+  fragment: string | null = '';
 
   constructor(private router: Router, public route: ActivatedRoute, public lang: LangService) {
 
@@ -51,15 +51,6 @@ export class HeaderComponent implements OnInit {
     this.lang.setValue(owlCarouselRTL);
     console.log( this.lang.selectLang)
   }
-
-
-
-// public goToItems(): void {
-//   this.router.navigate(['about'], { relativeTo: this.route });
-//   console.log(this.route);
-// }
-
-
 
 
 }

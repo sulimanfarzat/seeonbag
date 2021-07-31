@@ -58,7 +58,7 @@ h1, h2, h3, h4, h5, h6 {
 /*--------------------------------------------------------------
 # Disable AOS delay on mobile
 --------------------------------------------------------------*/
-@media screen and (max-width: 768px) {
+/*@media screen and (max-width: 768px) {
   [data-aos-delay] {
     transition-delay: 0 !important;
   }
@@ -66,7 +66,7 @@ h1, h2, h3, h4, h5, h6 {
     transition-duration: 0s !important;
   }
 }
-
+*/
 /*--------------------------------------------------------------
 # Header
 --------------------------------------------------------------*/
@@ -409,6 +409,15 @@ section {
   text-decoration: none;
 }
 
+.about .member {
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+}
+
+
 /*--------------------------------------------------------------
 # Features
 --------------------------------------------------------------*/
@@ -440,6 +449,12 @@ section {
  }
 }*/
 
+.features .icon i img{
+  width: 64px;
+}
+
+
+
 .features .nav-link i {
   padding-right: 15px;
   font-size: 48px;
@@ -454,12 +469,26 @@ section {
 .features .nav-link:hover {
   color: #fff;
   background-position: left;
+  img{
+    filter: saturate(7)!important;
+  }
 }
 
 .features .nav-link.active {
   background: #0E908E;
   color: #fff;
   border-color: #0E908E;
+  img{
+    filter: saturate(7)!important;
+  }
+}
+
+.features .member {
+  margin-bottom: 30px;
+  overflow: hidden;
+  border-radius: 30px;
+  background: #fff;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
 }
 
 @media (max-width: 768px) {
@@ -563,8 +592,8 @@ section {
   position: relative;
   overflow: hidden;
   border-radius: 30px;
-  background: #101D25;
-  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
+  background: #122932;
+  box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.2);
   transition: all 0.4s ease-in-out;
   width: 100%;
   height: 100%;
@@ -578,7 +607,7 @@ section {
 
 .services .icon {
   position: absolute;
-  left: -20px;
+  left: 0px;
   top: calc(50% - 30px);
 }
 
@@ -586,6 +615,10 @@ section {
   font-size: 64px;
   line-height: 1;
   transition: 0.5s;
+}
+
+.services .icon i img{
+  width: 64px;
 }
 
 .services .title {
@@ -596,7 +629,7 @@ section {
 }
 
 .services .title a {
-  color: #0E908E;
+  color: #787e7e;
   transition: ease-in-out 0.3s;
 }
 
@@ -948,7 +981,7 @@ section {
  transform: rotate(180deg);
 }
 
-ngb-accordion .card{
+ngb-accordion .accordion-item{
   margin: 10px auto;
   border-radius: 30px;
   background: white;
@@ -956,7 +989,7 @@ ngb-accordion .card{
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-ngb-accordion .card-header {
+ngb-accordion .accordion-header {
   padding: 0;
   cursor: pointer;
   border-radius: 30px !important;
@@ -964,7 +997,7 @@ ngb-accordion .card-header {
   transition: padding 0.5s;
 }
 
-ngb-accordion .card-header:hover {
+ngb-accordion .accordion-header:hover {
   background-color: #101D25;
   box-shadow: 0 2px 29px 0 rgba(68, 88, 144, 0.12);
   padding: 8px 0;
@@ -1027,14 +1060,14 @@ ngb-accordion i {
   border-radius: 50px;
   width: 36px;
   height: 36px;
-  background: rgba(239, 102, 3, 0.8);
+  background: rgba(14, 144, 142, 0.8);
   display: inline-block;
   transition: ease-in-out 0.3s;
   color: #fff;
 }
 
 .team .member .social a:hover {
-  background: #fc8129;
+  background: #0E908E;
 }
 
 .team .member .social i {
@@ -1200,6 +1233,20 @@ ngb-accordion i {
 }
 
 .contact .php-email-form button[type="submit"]:hover {
+  background: #101D25;
+}
+
+
+.contact .php-email-form .reset {
+  background: #0E908E;
+  border: 0;
+  padding: 10px 24px;
+  color: #fff;
+  transition: 0.4s;
+  border-radius: 50px;
+}
+
+.contact .php-email-form .reset:hover {
   background: #101D25;
 }
 

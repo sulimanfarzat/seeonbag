@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "seeonbag": {
+    "seeon180": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,12 +20,11 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/seeonbag",
+            "outputPath": "dist/seeon180",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
             "tsConfig": "tsconfig.app.json",
-            "aot": true,
             "assets": [
               "src/favicon.ico",
               "src/assets"
@@ -33,17 +32,15 @@
             "extractCss": true,
             "styles": [
               "node_modules/animate.css/animate.min.css",
-              "src/styles.scss",
-              {
-                 "input": "src/styles-ar.scss",
-                 "bundleName": "arabicStyle"
-              },
-              {
-                "input": "src/styles-en.scss",
-                "bundleName": "englishStyle"
-              }
+              "src/styles.scss"
             ],
-            "scripts": [ ]
+            "scripts": [ ],
+            "vendorChunk": true,
+            "extractLicenses": false,
+            "buildOptimizer": false,
+            "sourceMap": true,
+            "optimization": false,
+            "namedChunks": true
           },
           "configurations": {
             "production": {
@@ -78,18 +75,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "seeonbag:build"
+            "browserTarget": "seeon180:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "seeonbag:build:production"
+              "browserTarget": "seeon180:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "seeonbag:build"
+            "browserTarget": "seeon180:build"
           }
         },
         "test": {
@@ -126,16 +123,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "seeonbag:serve"
+            "devServerTarget": "seeon180:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "seeonbag:serve:production"
+              "devServerTarget": "seeon180:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "seeonbag"
+  "defaultProject": "seeon180"
 }

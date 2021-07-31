@@ -12,21 +12,33 @@
       <div class="col-lg-4" data-aos="fade-right">
         <div class="info">
           <div class="address">
-            <i><fa-icon [icon]="['fas', 'map-marked']"></fa-icon></i>
-            <h4>Location:</h4>
-            <p>Saros Lab GmbH, Egerten 3, 74388 Talheim</p>
+            <a href="https://goo.gl/maps/XPr3FVN5R3ZVp16m9" target="_blank">
+              <i>
+                <fa-icon [icon]="['fas', 'map-marked']"></fa-icon>
+              </i>
+              <h4>Location:</h4>
+              <p>Saros Lab GmbH, Egerten 3, 74388 Talheim</p>
+            </a>
           </div>
 
           <div class="email">
-            <i class="icofont-envelope"><fa-icon [icon]="['far', 'envelope']"></fa-icon></i>
-            <h4>Email:</h4>
-            <p>info@seeonbag.com</p>
+            <a href="mailto:info@seeon180.com">
+              <i class="icofont-envelope">
+                <fa-icon [icon]="['far', 'envelope']"></fa-icon>
+              </i>
+              <h4>Email:</h4>
+              <p>info@seeon180.com</p>
+            </a>
           </div>
 
           <div class="phone">
-            <i class="icofont-phone"><fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon></i>
-            <h4>Call:</h4>
-            <p>+49 713 39220420</p>
+            <a href="tel:004971339220420">
+              <i class="icofont-phone">
+                <fa-icon [icon]="['fas', 'mobile-alt']"></fa-icon>
+              </i>
+              <h4>Call:</h4>
+              <p>+49 713 39220420</p>
+            </a>
           </div>
 
         </div>
@@ -35,23 +47,25 @@
 
       <div class="col-lg-8 mt-5 mt-lg-0" data-aos="fade-left">
 
-        <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+        <!-- <form action="forms/contact.php" method="post" role="form" class="php-email-form"> -->
+        <form [formGroup]="formGroupContact" (validSubmit)="onSubmit()" role="form" #contactForm="ngForm" class="php-email-form">
+
           <div class="row">
             <div class="col-md-6 form-group">
-              <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+              <input type="text" name="name" formControlName="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
               <div class="validate"></div>
             </div>
             <div class="col-md-6 form-group mt-3 mt-md-0">
-              <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+              <input type="email" class="form-control" name="email" formControlName="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
               <div class="validate"></div>
             </div>
           </div>
           <div class="form-group mt-3">
-            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+            <input type="text" class="form-control" name="subject" formControlName="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
             <div class="validate"></div>
           </div>
           <div class="form-group mt-3">
-            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+            <textarea class="form-control" name="message" formControlName="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
             <div class="validate"></div>
           </div>
           <div class="mb-3">
@@ -59,7 +73,22 @@
             <div class="error-message"></div>
             <div class="sent-message">Your message has been sent. Thank you!</div>
           </div>
-          <div class="text-center"><button type="submit">Send Message</button></div>
+          <!-- <div class="text-center"><button type="submit">Send Message</button></div> -->
+
+          <div class="text-center col-lg-12 btn-toolbar justify-content-between" role="toolbar" aria-label="Toolbar with button groups">
+              <button type="button" class="reset" (click)="onReset()">Reset</button>
+              <button type="submit" name="submit">Send Message</button>
+          </div>
+          <div class="mt-2 p-3">
+            <ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">
+              email sent {{ successMessage }}
+            </ngb-alert>
+            <ngb-alert #selfClosingAlertNotSent *ngIf="notSuccessMessage" type="danger" (closed)="notSuccessMessage = ''">
+              email not sent {{ notSuccessMessage }}
+            </ngb-alert>
+            <hr/>
+            <p>
+          </div>
         </form>
 
       </div>

@@ -7,23 +7,14 @@ import { Color } from './pruduct.enum';
   styleUrls: ['./product.component.scss']
 })
 
-// class Bag {
-//   name: string ='';
-//   color: Color = Color.Green;
-
-//   constructor(name:string,color:Color) {
-//     this.name=name;
-//     this.color=color;
-//   }
-// }
 
 export class ProductComponent implements OnInit {
 
   linkColor: string = '' ;
   blue: Color = Color.Blue;
   gray: Color = Color.Gray;
-  green: Color = Color.Green;
-  yellow: Color = Color.Yellow;
+  orange: Color = Color.Orange;
+  darkgray : Color = Color.Darkgray ;
   red: Color = Color.Red;
   pink: Color = Color.Pink;
 
@@ -33,14 +24,14 @@ export class ProductComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  setColor(newColor: string = '#0BBDB1'): void {
-    console.log('value', newColor);
+  setColor(newColor: string = '#252525'): void {
+    // console.log('value', newColor);
     this.linkColor = newColor;
     (this.el.nativeElement as HTMLElement).style.setProperty('--bag-color', newColor);
   }
 
   getColor () {
-    console.log(this.linkColor)
+    // console.log(this.linkColor)
     return this.linkColor;
   }
 

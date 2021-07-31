@@ -14,12 +14,12 @@ export class LangService {
   constructor(public translate: TranslateService,
     @Inject(DOCUMENT) private document: Document) {
 
-    translate.addLangs(['en', 'de', 'ar']);
+    translate.addLangs(['en']);  /*,'de', 'ar'*/
     translate.setDefaultLang('en');
 
     const browserLang = translate.getBrowserLang();
-    translate.use(browserLang.match(/en|de|ar/) ? browserLang : 'en');
-    this.selectLang = (browserLang.match(/en|de|ar/) ? browserLang : 'en');
+    // translate.use(browserLang.match(/en|de|ar/) ? browserLang : 'en');
+    this.selectLang = 'en';// (browserLang.match(/en|de|ar/) ? browserLang : 'en');
 
     this.owlCarouselRTL = new BehaviorSubject<boolean>(false);
   }

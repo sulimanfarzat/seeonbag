@@ -1,7 +1,8 @@
-import { BrowserModule, Title } from '@angular/platform-browser';
+import { BrowserModule, Title, Meta } from '@angular/platform-browser';
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { RouterModule } from '@angular/router';
+
 
 // Awesome
 import { FaIconLibrary, FontAwesomeModule } from '@fortawesome/angular-fontawesome';
@@ -18,8 +19,9 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { CarouselModule } from 'ngx-owl-carousel-o';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { NgBootstrapFormValidationModule } from 'ng-bootstrap-form-validation';
 
 // components
 import { HeaderComponent } from './components/header/header.component';
@@ -33,6 +35,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { LangService } from './core/services/lang.service';
 import { ProductComponent } from './components/product/product.component';
 import { TestimonialsComponent } from './components/testimonials/testimonials.component';
+import { ApiService } from './core/services/api.service';
 
 const configGal = {
   loop: true,
@@ -62,6 +65,9 @@ const configGal = {
     FormsModule,
     GalleryModule.withConfig(configGal),
     LightboxModule,
+    ReactiveFormsModule,
+    NgBootstrapFormValidationModule.forRoot(),
+    NgBootstrapFormValidationModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,
@@ -71,7 +77,7 @@ const configGal = {
     }),
   ],
   exports: [TranslateModule],
-  providers: [Title, HttpClient, HttpClientModule, LangService,
+  providers: [Title, Meta, HttpClient, HttpClientModule, ApiService, LangService,
               {
                 provide: LIGHTBOX_CONFIG,
                 useValue: {

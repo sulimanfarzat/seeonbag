@@ -1,5 +1,3 @@
-<!-- *****************************svg********************************** -->
-<!-- *************************************************************** -->
 <!-- Start Header -->
 
 <header id="header" class="fixed-top d-flex align-items-center header-transparent"
@@ -29,8 +27,14 @@
           <li>
             <a routerLink="/home" [ngClass]="!fragment ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.home' | translate}}</a>
           </li>
+          <li>
+            <a routerLink="/home" fragment="futures" [ngClass]="fragment==='futures' ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.futures' | translate}}</a>
+          </li>
           <li >
             <a routerLink="/home" fragment="product" [ngClass]="fragment==='product' ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.product' | translate}}</a>
+          </li>
+          <li>
+            <a routerLink="/home" fragment="services" [ngClass]="fragment==='services' ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.functions' | translate}}</a>
           </li>
           <li>
             <a routerLink="/home" fragment="about" [ngClass]="fragment==='about' ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.about' | translate}}</a>
@@ -38,25 +42,9 @@
           <li>
             <a routerLink="/home" fragment="contact" [ngClass]="fragment==='contact' ? 'active' : ''" (click)="isMenuCollapsed = true">{{ 'header.contact' | translate}}</a>
           </li>
+          
         </ul>
 
-        <div class="form-inline my-2 my-lg-0">
-          <ng-select [(ngModel)]="lang.selectLang" class="custom my-2 my-sm-0"
-          (change)="switchLang($event)" appearance="outline" [searchable]="false" [clearable]="false">
-            <ng-option value="en">
-              <span class="flag-icon flag-icon-de"></span>
-              EN
-            </ng-option>
-            <ng-option value="de">
-              <span class="flag-icon flag-icon-gb"></span>
-              DE
-            </ng-option>
-            <ng-option value="ar">
-              <span class="flag-icon flag-icon-gb"></span>
-              AR
-            </ng-option>
-          </ng-select>
-        </div>
       </div>
 
     </nav>
